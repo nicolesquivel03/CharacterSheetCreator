@@ -1,5 +1,4 @@
-<p>character-description works!</p>
-
+<h1>Character Description</h1>
 <mat-form-field appearance='standard'>
     <mat-label>{{characterNameLabel}}</mat-label>
     <input matInput placeholder="Character Name">
@@ -7,10 +6,13 @@
 
 <mat-form-field appearance="standard">
     <mat-label>{{careerLabel}}</mat-label>
-    <mat-select>
-        <mat-option *ngFor="let career of careerList" [value]="career.value">
-          {{ career.display }}
-        </mat-option>
+    <mat-select [formControl]="descriptionControl">
+        <mat-optgroup *ngFor="let group of careerGroup" [label]="group.name"
+                      [disabled]="group.disabled">
+            <mat-option *ngFor="let career of group.careers" [value]="career.value">
+            {{ career.display }}
+            </mat-option>
+        </mat-optgroup>
     </mat-select>
 </mat-form-field>
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Career } from '../character-description/career';
+import { Career, CareerGroup } from '../character-description/career';
 import { Archetype } from '../character-description/archetype';
+import { basicArchetypeList } from '../character-description/archetypes';
+import { basicCareerList, fantasyCareerList, scifiCareerList } from '../character-description/careers';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -11,12 +13,13 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./character-description.component.scss']
 })
 export class CharacterDescriptionComponent implements OnInit {
+  descriptionControl = new FormControl();
 
   readonly characterNameLabel: string = 'Character Name';
   readonly playerNameLabel: string = 'Player Name';
   
   readonly careerLabel: string = 'Select Career';
-  careerList: Career[] = [];
+  careerGroup: CareerGroup[];
   
   readonly archetypeLabel: string = 'Select Archetype/Species';
   archetypeList: Archetype[] = [];
@@ -30,40 +33,24 @@ export class CharacterDescriptionComponent implements OnInit {
   }
 
   setCareers(): void {
-    const basicCareerList = [
-      { display: 'Entertainer', value: 'entertainer' },
-      { display: 'Explorer', value: 'explorer'},
-      { display:'Healer', value: 'healer'},
-      { display:'Leader', value: 'leader'},
-      { display:'Scoundrel', value: 'scoundrel'},
-      { display:'Socialite', value: 'socialite'},
-      { display:'Soldier', value: 'soldier'},
-      { display:'Tradesperson', value: 'tradesperson'}
-    ];
-    const fantasyCareerList = [ 
-      { display: 'Knight', value: 'knight' },
-      { display: 'Priest', value: 'priest'},
-      { display: 'Druid', value: 'druid' },
-      { display: 'Wizard', value: 'wizard'}
-    ];
-    const scifiCareerList = [
-      { display: 'Hacker', value: 'hacker'},
-      { display: 'Fighter Pilot', value: 'fighterPilot'},
-      { display: 'Mad Scientist', value: 'madScientist'},
-      { display: 'Starship Captain', value: 'starshipCaptain'}
-    ];
 
-    this.careerList = this.careerList.concat(basicCareerList).concat(fantasyCareerList).concat(scifiCareerList);
+    this.careerGroup = [
+      {
+        name: "Basic Careers",
+        careers: basicCareerList
+      }, 
+      {
+        name: "Fantasy Careers",
+        careers: fantasyCareerList
+      },
+      {
+        name: "Sci-Fi Careers", 
+        careers: scifiCareerList
+      }
+    ]
   }
 
   setArchetypes(): void {
-    const basicArchetypeList = [
-      { display: 'Average Human', value: 'human' },
-      { display: 'The Laborer', value: 'laborer' },
-      { display: 'The Intellectual', value: 'intellectual' },
-      { display: 'The Aristocrat', value: 'aristocrat' }
-    ];
-
     this.archetypeList = this.archetypeList.concat(basicArchetypeList);
   }
 }
