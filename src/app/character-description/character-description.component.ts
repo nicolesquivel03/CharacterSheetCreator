@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { Career } from '../character-description/career';
+import { Archetype } from '../character-description/archetype';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-description',
@@ -12,10 +16,10 @@ export class CharacterDescriptionComponent implements OnInit {
   readonly playerNameLabel: string = 'Player Name';
   
   readonly careerLabel: string = 'Select Career';
-  careerList: string[];
+  careerList: Career[] = [];
   
   readonly archetypeLabel: string = 'Select Archetype/Species';
-  archetypeList: string[];
+  archetypeList: Archetype[] = [];
   
   constructor() { }
   
@@ -26,17 +30,41 @@ export class CharacterDescriptionComponent implements OnInit {
   }
 
   setCareers(): void {
-    const basicCareerList = ['Entertainer','Explorer','Healer','Leader','Scoundrel','Socialite','Soldier','Tradesperson'];
-    const fantasyCareerList = ['Knight','Priest','Druid','Wizard'];
-    const scifiCareerList = ['Hacker','Fighter Pilot','Mad Scientist','Starship Captain'];
+    const basicCareerList = [
+      { display: 'Entertainer', value: 'entertainer' },
+      { display: 'Explorer', value: 'explorer'},
+      { display:'Healer', value: 'healer'},
+      { display:'Leader', value: 'leader'},
+      { display:'Scoundrel', value: 'scoundrel'},
+      { display:'Socialite', value: 'socialite'},
+      { display:'Soldier', value: 'soldier'},
+      { display:'Tradesperson', value: 'tradesperson'}
+    ];
+    const fantasyCareerList = [ 
+      { display: 'Knight', value: 'knight' },
+      { display: 'Priest', value: 'priest'},
+      { display: 'Druid', value: 'druid' },
+      { display: 'Wizard', value: 'wizard'}
+    ];
+    const scifiCareerList = [
+      { display: 'Hacker', value: 'hacker'},
+      { display: 'Fighter Pilot', value: 'fighterPilot'},
+      { display: 'Mad Scientist', value: 'madScientist'},
+      { display: 'Starship Captain', value: 'starshipCaptain'}
+    ];
 
-    this.careerList.concat(basicCareerList).concat(fantasyCareerList).concat(scifiCareerList);
+    this.careerList = this.careerList.concat(basicCareerList).concat(fantasyCareerList).concat(scifiCareerList);
   }
 
   setArchetypes(): void {
-    const basicArchetypeList = ['Average Human','The Laborer','The Intellectual','The Aristocrat'];
+    const basicArchetypeList = [
+      { display: 'Average Human', value: 'human' },
+      { display: 'The Laborer', value: 'laborer' },
+      { display: 'The Intellectual', value: 'intellectual' },
+      { display: 'The Aristocrat', value: 'aristocrat' }
+    ];
 
-    this.archetypeList.concat(basicArchetypeList);
+    this.archetypeList = this.archetypeList.concat(basicArchetypeList);
   }
 }
 
