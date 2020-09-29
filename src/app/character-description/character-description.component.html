@@ -1,0 +1,27 @@
+<p>character-description works!</p>
+
+<mat-form-field appearance='fill'>
+    <mat-label>{{characterNameLabel}}</mat-label>
+    <input matInput>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>{{careerLabel}}</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let career of careerList" [value]="career[value]">
+          {{ career }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>playerNameLabel</mat-label>
+    <mat-select>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance='fill'>
+    <mat-label>{{playerNameLabel}}</mat-label>
+    <input matInput>
+</mat-form-field>
