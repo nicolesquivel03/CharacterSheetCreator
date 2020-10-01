@@ -1,9 +1,17 @@
 .genesys-character-sheet {
-    .description {
+    .section {
+        margin: 15px 0px;
         padding: 30px;
-        width: 25%;
         background-color: #fafafa;
         border-radius: 25px;
         border: solid 1px #000000;
+    }
+
+    .configuration {
+        width: 375px;
+    }
+
+    .description {
+        width: 375px;
     }
 }

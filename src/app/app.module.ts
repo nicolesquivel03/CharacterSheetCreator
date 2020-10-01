@@ -11,17 +11,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { CharacterDescriptionComponent } from './character-description/character-description.component';
 import { GenesysCharacterSheetComponent } from './genesys-character-sheet/genesys-character-sheet.component';
 import { CharacterCharacteristicsComponent } from './character-characteristics/character-characteristics.component';
+import { GameConfigurationComponent } from './game-configuration/game-configuration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterDescriptionComponent,
     GenesysCharacterSheetComponent,
-    CharacterCharacteristicsComponent
+    CharacterCharacteristicsComponent,
+    GameConfigurationComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { CharacterCharacteristicsComponent } from './character-characteristics/c
     MatSelectModule,
     MatButtonModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatGridListModule
   ],
   exports: [
     MatSelectModule,

@@ -1,6 +1,9 @@
+import { Skill } from './skills';
+import { ArchetypeEnum } from './archetypes';
+
 export interface Archetype {
+    id: number;
     display: string;
-    value: string;
     startingBrawn: number;
     startingAgility: number;
     startingIntellect: number;
@@ -10,5 +13,11 @@ export interface Archetype {
     startingWounds: number;
     startingStrain: number;
     startingExperience: number;
-    startingSkill: string[];
+    startingSkill: Skill[];
+}
+
+export interface ArchetypeGroup {
+    disabled?: boolean;
+    name: string;
+    archetypes: Map<ArchetypeEnum, Archetype>;
 }
