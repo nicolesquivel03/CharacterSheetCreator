@@ -27,9 +27,9 @@ export class GameConfigurationComponent implements OnInit {
     return this.player.setting ? this.player.setting.display : "";
   }
 
-  onSettingChange(event): void {
+  onChangeUpdate(event): void {
     this.playerService.updatePlayer(this.player);
-    console.log(`Setting changed to ${this.getSetting()}`);
+    console.log(`Setting changed to ${this.getSetting()}. Magic is ${this.player.magicEnabled}`);
   }
 
 }

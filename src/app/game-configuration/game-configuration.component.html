@@ -3,7 +3,7 @@
     <mat-grid-tile>
         <mat-form-field appearance="standard">
             <mat-label>{{settingsLabel}}</mat-label>
-            <mat-select [(value)]="player.setting" (selectionChange)="onSettingChange($event)">
+            <mat-select [(value)]="player.setting" (selectionChange)="onChangeUpdate($event)">
                 <mat-option *ngFor="let setting of settings | keyvalue" [value]="setting.value">
                   {{ setting.value.display }}
                 </mat-option>
@@ -11,6 +11,6 @@
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
-        <mat-checkbox [(ngModel)]="player.magicEnabled"> {{magicLabel}} </mat-checkbox>
+        <mat-checkbox [(ngModel)]="player.magicEnabled" (change)="onChangeUpdate($event)"> {{magicLabel}} </mat-checkbox>
     </mat-grid-tile>
 </mat-grid-list>
