@@ -3,10 +3,11 @@ import { PlayerSkill } from "./player-skills";
 import { Archetype } from "../character-description/archetype";
 import { Career } from "../character-description/career";
 import { Setting } from "../game-configuration/settings";
+import { CharacteristicEnum } from '../character-characteristics/characteristics';
 
 export interface Player {
     playerStats: PlayerStat[];
-    playerCharacteristics: PlayerCharacteristic[];
+    playerCharacteristics: Map<CharacteristicEnum, PlayerCharacteristic>;
     playerSkills: PlayerSkill[];
     playerArchetype: Archetype;
     playerCareer: Career;

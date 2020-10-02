@@ -78,6 +78,7 @@ export class CharacterDescriptionComponent implements OnInit {
   updateCareerGroups(): void {
     this.careerGroup.forEach((group) => {
       if(this.player.setting.id) {
+
         if(group.setting.indexOf(SettingEnum.All) !== -1 || group.setting.indexOf(this.player.setting.id) !== -1) {
           group.disabled = false;
         } else {
@@ -86,7 +87,7 @@ export class CharacterDescriptionComponent implements OnInit {
       }
     });
   }
-
+s
   setArchetypes(): void {
     this.archetypeGroup = [
       {
@@ -94,6 +95,29 @@ export class CharacterDescriptionComponent implements OnInit {
         archetypes: basicArchetypeList
       }
     ] 
+  }
+
+  onArchetypeOpened(event): void {
+    if(this.player.setting) {
+      console.log(`Updating Chracteristics and stats using ${this.player.setting.display}`);
+      
+      // Event is true if opened, false if closing
+      if(event) {
+        this.updateArchetypeAndCharacteristics();
+      }
+    }
+  }
+
+  updateArchetypeAndCharacteristics(): void {
+    /*
+    this.player.playerCharacteristics
+    this.playerService.updatePlayer(this.player);
+  
+    playerStats: PlayerStat[];
+    PlayerCharacteristic[];
+    PlayerSkill[];
+    Archetype;s*/
+    
   }
 }
 

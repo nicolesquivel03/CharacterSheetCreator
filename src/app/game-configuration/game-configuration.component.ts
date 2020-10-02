@@ -12,15 +12,16 @@ import { Player } from '../player/player';
 export class GameConfigurationComponent implements OnInit {
   player: Player;
 
-  configurationControl = new FormControl();
+  configurationControl: FormControl = new FormControl();
   settings = Settings;
   settingsLabel = "Settings";
   magicLabel = "Magic Enabled";
 
+  // Dependency Injection
   constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
-    this.playerService.player$.subscribe(player => this.player = player);
+    this.playerService.player$.subscribe((player: Player) => this.player = player);
   }
 
   getSetting(): string {

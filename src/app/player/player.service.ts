@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Player } from '../player/player';
-import { Observable, of, Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { characteristicList } from './player-characteristics'
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PlayerService {
     playerArchetype: null,
     playerCareer: null,
     playerSkills: [],
-    playerCharacteristics: [],
+    playerCharacteristics: characteristicList,
     playerStats: [],
     setting: null
   });
