@@ -47,3 +47,30 @@ export const characteristicList: Map<CharacteristicEnum, PlayerCharacteristic> =
         }
     ]
 ])
+
+export const statsList: Map<StatEnum, PlayerStat> = new Map([
+    [
+        StatEnum.Soak, {
+            id: StatEnum.Soak,
+            value: 0
+        }
+    ],
+    [
+        StatEnum.Wounds, {
+            id: StatEnum.Wounds,
+            value: 0
+        }
+    ],
+    [
+        StatEnum.Strain, {
+            id: StatEnum.Strain,
+            value: 0
+        }
+    ],
+    [
+        StatEnum.Defense, {
+            id: StatEnum.Defense,
+            value: 0
+        }
+    ]
+])
