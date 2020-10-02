@@ -21,7 +21,7 @@ export const characteristicList: Map<CharacteristicEnum, PlayerCharacteristic> =
         value: 0
         }
     ], [
-    CharacteristicEnum.Agility, {
+        CharacteristicEnum.Agility, {
         id: CharacteristicEnum.Agility,
         value: 0
         }
@@ -31,17 +31,17 @@ export const characteristicList: Map<CharacteristicEnum, PlayerCharacteristic> =
         value: 0
         }
     ], [
-    CharacteristicEnum.Cunning, {
+        CharacteristicEnum.Cunning, {
         id: CharacteristicEnum.Cunning,
         value: 0
         }
     ], [
-    CharacteristicEnum.Willpower, {
+        CharacteristicEnum.Willpower, {
         id: CharacteristicEnum.Willpower,
         value: 0
         }
     ], [
-    CharacteristicEnum.Presence, {
+        CharacteristicEnum.Presence, {
         id: CharacteristicEnum.Presence,
         value: 0
         }
