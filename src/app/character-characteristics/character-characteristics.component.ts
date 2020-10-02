@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from '../player/player';
-import { StatEnum } from './characteristics'
+import { StatEnum } from './characteristics';
+import { PlayerService } from '../player/player.service';
 
 @Component({
   selector: 'app-character-characteristics',
@@ -16,9 +17,10 @@ export class CharacterCharacteristicsComponent implements OnInit {
   readonly meleeLabel: string = 'Melee';
 
 
-  constructor() { }
-
+  constructor(private playerService: PlayerService) { }
+  
   ngOnInit(): void {
+    this.playerService.player$.subscribe(player => this.player = player);
   }
 
 }
