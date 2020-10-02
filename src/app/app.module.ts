@@ -22,6 +22,7 @@ import { CharacterDescriptionComponent } from './character-description/character
 import { GenesysCharacterSheetComponent } from './genesys-character-sheet/genesys-character-sheet.component';
 import { CharacterCharacteristicsComponent } from './character-characteristics/character-characteristics.component';
 import { GameConfigurationComponent } from './game-configuration/game-configuration.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { GameConfigurationComponent } from './game-configuration/game-configurat
     MatCheckboxModule,
     MatGridListModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    FontAwesomeModule
   ],
   exports: [
     MatSelectModule,
