@@ -1,8 +1,4 @@
-export interface Characteristic {
-    id: number;         
-    display: string;    // Name of Characteristic that player can see
-    
-}
+import { Characteristic } from "./characteristic"
 
 export enum CharacteristicEnum {
     Brawn,
@@ -12,37 +8,6 @@ export enum CharacteristicEnum {
     Willpower,
     Presence
 }
-
-export interface Stat {
-    id: number;
-    display: string;
-}
-
-export enum StatEnum {
-    Soak,
-    Wounds,
-    Strain,
-    Defense
-}
-
-export const Stats: Stat[] = [
-    {
-        id: StatEnum.Soak,
-        display: 'Soak Value'    
-    },
-    {
-        id: StatEnum.Wounds,
-        display: 'Wounds',  
-    },
-    {
-        id: StatEnum.Strain,
-        display: 'Strain'  
-    },
-    {
-        id: StatEnum.Defense,
-        display: 'Defense' 
-    }
-]
 
 export const Characteristics: Characteristic[] = [
     {

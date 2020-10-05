@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from '../player/player';
-import { StatEnum } from './characteristics';
+import { Characteristics } from './characteristics';
+import { Characteristic } from './characteristic';
 import { PlayerService } from '../player/player.service';
 
 @Component({
@@ -11,14 +12,10 @@ import { PlayerService } from '../player/player.service';
 export class CharacterCharacteristicsComponent implements OnInit {
   @Input() player: Player;
 
-  readonly thresholdLabel: string = 'Threshold';
-  readonly currentLabel: string = 'Current';
-  readonly rangeLabel: string = 'Range';
-  readonly meleeLabel: string = 'Melee';
-
+  defaultCharacteristics: Characteristic[] = Characteristics;
 
   constructor(private playerService: PlayerService) { }
-  
+
   ngOnInit(): void {
     this.playerService.player$.subscribe(player => this.player = player);
   }

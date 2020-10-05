@@ -4,29 +4,9 @@
     <input matInput placeholder="Character Name">
 </mat-form-field>
 
-<mat-form-field appearance="standard">
-    <mat-label>{{archetypeLabel}}</mat-label>
-    <mat-select [formControl]="descriptionControl">
-        <mat-optgroup *ngFor="let group of archetypeGroup" [label]="group.name"
-                    [disabled] ="group.disabled">
-            <mat-option *ngFor="let archetype of group.archetypes | keyvalue" [value]= "archetype.value.id">
-                {{ archetype.value.display }}
-            </mat-option>
-        </mat-optgroup>
-    </mat-select>
-</mat-form-field>
+<app-character-archetype></app-character-archetype>
 
-<mat-form-field appearance="standard">
-    <mat-label>{{careerLabel}}</mat-label>
-    <mat-select [formControl]="descriptionControl" (openedChange)="onCareerOpened($event)">
-        <mat-optgroup *ngFor="let group of careerGroup" [label]="group.name"
-                    [disabled] ="group.disabled">
-            <mat-option *ngFor="let career of group.careers | keyvalue" [value]= "career.value.id">
-                {{ career.value.display }}
-            </mat-option>
-        </mat-optgroup>
-    </mat-select>
-</mat-form-field>
+<app-character-career></app-character-career>
 
 <mat-form-field appearance='standard'>
     <mat-label>{{playerNameLabel}}</mat-label>

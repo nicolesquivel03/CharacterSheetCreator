@@ -1,3 +1,4 @@
+import { Skill } from "./skill"
 import { CharacteristicEnum } from "../character-characteristics/characteristics";
 import { SettingEnum } from "../game-configuration/settings";
 
@@ -39,13 +40,6 @@ export enum SkillsEnum {
     Streetwise,
     Survival,
     Vigilance
-}
-
-export interface Skill {
-    id: number;
-    display: string;
-    setting: SettingEnum[];
-    characteristic: CharacteristicEnum;
 }
 
 export const Skills: Map<SkillsEnum, Skill> = new Map([

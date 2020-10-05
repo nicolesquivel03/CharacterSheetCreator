@@ -1,4 +1,4 @@
-import { Skill } from "../character-description/skills";
+import { Skill } from "../character-skills/skill";
 import { Careers, CareerGroupEnum } from './careers';
 import { SettingEnum } from "../game-configuration/settings";
 

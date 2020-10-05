@@ -1,17 +1,8 @@
-import { CharacteristicEnum, StatEnum } from "../character-characteristics/characteristics";
+import { CharacteristicEnum } from "../character-characteristics/characteristics";
 
 export interface PlayerCharacteristic {
     id: CharacteristicEnum;
     value: number;
-}
-
-export interface PlayerStat {
-    id: StatEnum;
-    thresholdValue?: number;
-    currentValue?: number;
-    value?: number;
-    rangedValue?: number;
-    meleeValue?: number;
 }
 
 export const characteristicList: Map<CharacteristicEnum, PlayerCharacteristic> = new Map([
@@ -44,33 +35,6 @@ export const characteristicList: Map<CharacteristicEnum, PlayerCharacteristic> =
     CharacteristicEnum.Presence, {
         id: CharacteristicEnum.Presence,
         value: 0
-        }
-    ]
-])
-
-export const statsList: Map<StatEnum, PlayerStat> = new Map([
-    [
-        StatEnum.Soak, {
-            id: StatEnum.Soak,
-            value: 0
-        }
-    ],
-    [
-        StatEnum.Wounds, {
-            id: StatEnum.Wounds,
-            value: 0
-        }
-    ],
-    [
-        StatEnum.Strain, {
-            id: StatEnum.Strain,
-            value: 0
-        }
-    ],
-    [
-        StatEnum.Defense, {
-            id: StatEnum.Defense,
-            value: 0
         }
     ]
 ])

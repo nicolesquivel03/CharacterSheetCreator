@@ -1,5 +1,5 @@
-import { Career } from '../character-description/career';
-import { Skills, SkillsEnum } from "../character-description/skills";
+import { Career } from '../character-career/career';
+import { Skills, SkillsEnum } from "../character-skills/skills";
 import { SettingEnum } from "../game-configuration/settings";
 
 export enum Careers {
@@ -172,28 +172,70 @@ export const fantasyCareerList: Map<Careers, Career> = new Map([
         Careers.Knight, { 
             id: Careers.Knight, 
             display: 'Knight',
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Athletics],
+                Skills[SkillsEnum.Discipline],
+                Skills[SkillsEnum.Gunnery],
+                Skills[SkillsEnum.Leadership],
+                Skills[SkillsEnum.Melee],
+                Skills[SkillsEnum.Melee_Heavy],
+                Skills[SkillsEnum.Melee_Light],
+                Skills[SkillsEnum.Resilience],
+                Skills[SkillsEnum.Riding],
+                Skills[SkillsEnum.Vigilance]
+                
+            ]
         }
     ],
     [
         Careers.Priest, { 
             id: Careers.Priest, 
             display: 'Priest',
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Charm],
+                Skills[SkillsEnum.Coercion],
+                Skills[SkillsEnum.Cool],
+                Skills[SkillsEnum.Discipline],
+                Skills[SkillsEnum.Divine],
+                Skills[SkillsEnum.Medicine],
+                Skills[SkillsEnum.Melee],
+                Skills[SkillsEnum.Melee_Light],
+                Skills[SkillsEnum.Negotiation]
+            ]
         }
     ],
     [
         Careers.Druid, { 
             id: Careers.Druid, 
             display: 'Druid',
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Athletics],
+                Skills[SkillsEnum.Brawl],
+                Skills[SkillsEnum.Coordination],
+                Skills[SkillsEnum.Melee],
+                Skills[SkillsEnum.Melee_Heavy],
+                Skills[SkillsEnum.Primal],
+                Skills[SkillsEnum.Resilience],
+                Skills[SkillsEnum.Survival],
+                Skills[SkillsEnum.Vigilance]
+            ]
         }
     ],
     [
         Careers.Wizard, { 
             id: Careers.Wizard, 
             display: 'Wizard',
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Arcana],
+                Skills[SkillsEnum.Alchemy],
+                Skills[SkillsEnum.Coercion],
+                Skills[SkillsEnum.Discipline],
+                Skills[SkillsEnum.Knowledge],
+                Skills[SkillsEnum.Leadership],
+                Skills[SkillsEnum.Skulduggery],
+                Skills[SkillsEnum.Stealth],
+                Skills[SkillsEnum.Vigilance]
+            ]
         }
     ]
 ]);
@@ -203,26 +245,69 @@ export const scifiCareerList: Map<Careers, Career> =  new Map([
         Careers.Hacker, { 
             id: Careers.Hacker, 
             display: 'Hacker',
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Computers],
+                Skills[SkillsEnum.Discipline],
+                Skills[SkillsEnum.Knowledge],                
+                Skills[SkillsEnum.Mechanics],
+                Skills[SkillsEnum.Perception],
+                Skills[SkillsEnum.Piloting],
+                Skills[SkillsEnum.Streetwise],
+                Skills[SkillsEnum.Vigilance]
+            ]
         }
     ],
     [
         Careers.FighterPilot, { 
             id: Careers.FighterPilot, 
             display: 'Fighter Pilot',
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Cool],
+                Skills[SkillsEnum.Driving],
+                Skills[SkillsEnum.Gunnery],                
+                Skills[SkillsEnum.Mechanics],
+                Skills[SkillsEnum.Perception],
+                Skills[SkillsEnum.Piloting],
+                Skills[SkillsEnum.Ranged],
+                Skills[SkillsEnum.Ranged_Light],
+                Skills[SkillsEnum.Vigilance]
+            ]
         }
     ],[
         Careers.MadScientist, { 
             id: Careers.MadScientist, 
             display: 'Mad Scientist', 
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Alchemy],
+                Skills[SkillsEnum.Arcana],
+                Skills[SkillsEnum.Coercion],
+                Skills[SkillsEnum.Knowledge],                
+                Skills[SkillsEnum.Mechanics],
+                Skills[SkillsEnum.Medicine],
+                Skills[SkillsEnum.Operating],
+                Skills[SkillsEnum.Skulduggery],
+                Skills[SkillsEnum.Ranged]
+            ]
         }
     ],[
         Careers.StarshipCaptain, { 
             id: Careers.StarshipCaptain, 
             display: 'Starship Captain', 
-            skills: []
+            skills: [
+                Skills[SkillsEnum.Astrocatography],
+                Skills[SkillsEnum.Computers],
+                Skills[SkillsEnum.Discipline],
+                Skills[SkillsEnum.Gunnery],
+                Skills[SkillsEnum.Knowledge],                
+                Skills[SkillsEnum.Leadership],
+                Skills[SkillsEnum.Mechanics],
+                Skills[SkillsEnum.Operating],
+                Skills[SkillsEnum.Perception]
+            ]
         }
     ]
 ]);
+
+
+/*export const basicCareerList: Map<Careers, Career> = new Map([
+*/

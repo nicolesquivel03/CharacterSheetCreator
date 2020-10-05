@@ -1,16 +1,13 @@
-<p>character-characteristics works!</p>
-
-<!--<div class="Stats"> 
-    <mat-card-header class="Soak">
-        <mat-card-title>{{statsList.Soak.display}}</mat-card-title>
+<div class="characteristics">
+  <div *ngFor="let characteristic of defaultCharacteristics" class="card">
+    <mat-card>
+      <mat-card-header class="title">
+        <mat-card-title >{{characteristic.display}}</mat-card-title>
       </mat-card-header>
-      <mat-card-content>
-        {{player.playerStats.Soak.value}}
+      <mat-card-content class="body">
+        {{player.playerCharacteristics.get(characteristic.id).value}}
       </mat-card-content>
+    </mat-card>
+  </div>
 </div>
--->
 
-
-<div class="Characteristics"> 
-
-</div>

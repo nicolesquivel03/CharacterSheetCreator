@@ -1,0 +1,11 @@
+<mat-form-field appearance="standard">
+    <mat-label>{{archetypeLabel}}</mat-label>
+    <mat-select [formControl]="descriptionControl" (selectionChange)="onArchetypeSelection($event)">
+        <mat-optgroup *ngFor="let group of archetypeGroup" [label]="group.name"
+                    [disabled] ="group.disabled">
+            <mat-option *ngFor="let archetype of group.archetypes | keyvalue" [value]= "archetype.value.id">
+                {{ archetype.value.display }}
+            </mat-option>
+        </mat-optgroup>
+    </mat-select>
+</mat-form-field>

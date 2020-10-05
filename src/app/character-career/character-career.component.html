@@ -1,0 +1,11 @@
+<mat-form-field appearance="standard">
+    <mat-label>{{careerLabel}}</mat-label>
+    <mat-select [formControl]="descriptionControl" (openedChange)="onCareerOpened($event)">
+        <mat-optgroup *ngFor="let group of careerGroup" [label]="group.name"
+                    [disabled] ="group.disabled">
+            <mat-option *ngFor="let career of group.careers | keyvalue" [value]= "career.value.id">
+                {{ career.value.display }}
+            </mat-option>
+        </mat-optgroup>
+    </mat-select>
+</mat-form-field>

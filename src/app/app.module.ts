@@ -1,3 +1,6 @@
+/** 3RD PARTY IMPORTS **/
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 /** ANGULAR IMPORTS **/
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,8 +16,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
+/** APPLICATION IMPORTS **/
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -22,7 +26,10 @@ import { CharacterDescriptionComponent } from './character-description/character
 import { GenesysCharacterSheetComponent } from './genesys-character-sheet/genesys-character-sheet.component';
 import { CharacterCharacteristicsComponent } from './character-characteristics/character-characteristics.component';
 import { GameConfigurationComponent } from './game-configuration/game-configuration.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CharacterStatsComponent } from './character-stats/character-stats.component';
+import { CharacterCareerComponent } from './character-career/character-career.component';
+import { CharacterSkillsComponent } from './character-skills/character-skills.component';
+import { CharacterArchetypeComponent } from './character-archetype/character-archetype.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +37,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CharacterDescriptionComponent,
     GenesysCharacterSheetComponent,
     CharacterCharacteristicsComponent,
-    GameConfigurationComponent
+    GameConfigurationComponent,
+    CharacterStatsComponent,
+    CharacterStatsComponent,
+    CharacterCareerComponent,
+    CharacterSkillsComponent,
+    CharacterArchetypeComponent
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -46,8 +59,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatCheckboxModule,
     MatGridListModule,
     MatToolbarModule,
-    MatCardModule,
-    FontAwesomeModule
+    MatCardModule
   ],
   exports: [
     MatSelectModule,
