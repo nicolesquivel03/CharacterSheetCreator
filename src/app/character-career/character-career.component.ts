@@ -21,12 +21,20 @@ export class CharacterCareerComponent implements OnInit {
   descriptionControl = new FormControl();
   
   readonly careerLabel: string = 'Select Career';
+  careerGroups: Map<CareerGroupEnum, CareerGroup>;
+  selectedCareerGroup: Map<CareerEnum, Career>;
   
   constructor(private playerService: PlayerService) { }
   
 
   ngOnInit(): void {
     this.playerService.player$.subscribe(player => this.player = player);
+    this.setCareers();
+  }
+
+  setCareers(): void {
+    this.careerGroups = careerGroupList;
+    this.selectedCareerGroup = basicCareerList;
   }
 
   onCareerOpened(event): void {
@@ -41,7 +49,7 @@ export class CharacterCareerComponent implements OnInit {
   }
 
   updateCareerGroups(): void {
-    careerGroupList.forEach((group) => {
+    this.careerGroups.forEach((group) => {
       if(this.player.setting.id) {
 
         if(group.setting.indexOf(SettingEnum.All) !== -1 || group.setting.indexOf(this.player.setting.id) !== -1) {
@@ -52,32 +60,24 @@ export class CharacterCareerComponent implements OnInit {
       }
     });
   }
-
+/*
   onCareerSelection(event): void {
-    console.log(`Updating Career using ${this.player.playerCareer.display}`);
-
-    if (event)
-    {
-      const selectectCareer = this.findCareerChoice(event.value);
+    console.log(`Updating Career`);
+    const selectectCareer = this.get(event.value);
       this.player.playerCareer = selectectCareer;
       selectectCareer.skills.forEach(mySkill => {
         this.makeCareerSkills(mySkill)
       });
       this.playerService.updatePlayer(this.player);
     }
+    console.log(`Updating Career using ${this.player.playerCareer.display}`);
   }
 
-  findCareerChoice(enteredCareer: string): Career {
-    careerGroupList.forEach(CareerGroupType => {
-      CareerGroupType.careerList.forEach(CareerType => {
-        if (enteredCareer == CareerType.display)
-          return CareerType;
-      });
-    });
-    return null;
-  }
+  selectedCareerChoice(careerValue)
 
   makeCareerSkills(chosenSkill: Skill): void{
     this.player.playerSkills[chosenSkill.id].isCareerSkill = true;
   }
+*/
+
 }

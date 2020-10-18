@@ -41,12 +41,13 @@ export class CharacterArchetypeComponent implements OnInit {
   }
 
   onArchetypeSelection(event): void {
+    console.log(`Updating Archetype`);
     const selectedArchetype = basicArchetypeList.get(event.value);
     this.player.playerArchetype = selectedArchetype;
     this.updateCharacteristicsValues(selectedArchetype);
     this.UpdateStats();
     this.playerService.updatePlayer(this.player);
-    
+    console.log(`Archetype now: ${this.player.playerArchetype.display}`);
   }
 
   updateCharacteristicsValues(selectedArchetype: Archetype): void {

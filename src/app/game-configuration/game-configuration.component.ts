@@ -29,6 +29,7 @@ export class GameConfigurationComponent implements OnInit {
   }
 
   onChangeUpdate(event): void {
+    this.player.playerStats = null
     this.playerService.updatePlayer(this.player);
     console.log(`Setting changed to ${this.getSetting()}. Magic is ${this.player.magicEnabled}`);
   }

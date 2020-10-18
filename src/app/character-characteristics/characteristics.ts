@@ -12,27 +12,33 @@ export enum CharacteristicEnum {
 export const Characteristics: Characteristic[] = [
     {
         id: CharacteristicEnum.Brawn,
-        display: 'Brawn'   
+        display: 'Brawn',   
+        value: 0
     },
     {
         id: CharacteristicEnum.Agility,
-        display: 'Agility'
+        display: 'Agility',   
+        value: 0
     },
     {
         id: CharacteristicEnum.Intellect,
-        display: 'Intellect'
+        display: 'Intellect',   
+        value: 0
     },
     {
         id: CharacteristicEnum.Cunning,
-        display: 'Cunning'
+        display: 'Cunning',   
+        value: 0
     },
     {
         id: CharacteristicEnum.Willpower,
-        display: 'Willpower'
+        display: 'Willpower',   
+        value: 0
     },
     {
         id: CharacteristicEnum.Presence,
-        display: 'Presence'
+        display: 'Presence',   
+        value: 0
     },
 
 ]
