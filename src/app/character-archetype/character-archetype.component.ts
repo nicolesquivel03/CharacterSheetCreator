@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Archetype, ArchetypeGroup } from '../character-archetype/archetype';
-import { basicArchetypeList, ArchetypeEnum } from '../character-description/archetypes';
+import { basicArchetypeList, ArchetypeEnum } from '../character-archetype/archetypes';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -11,6 +11,11 @@ import { PlayerService } from '../player/player.service';
 import { identifierModuleUrl } from '@angular/compiler';
 import { StatEnum } from '../character-stats/stats';
 
+@Component({
+  selector: 'app-character-archetype',
+  templateUrl: './character-archetype.component.html',
+  styleUrls: ['./character-archetype.component.scss']
+})
 export class CharacterArchetypeComponent implements OnInit {
   player: Player;
 
@@ -39,7 +44,9 @@ export class CharacterArchetypeComponent implements OnInit {
     const selectedArchetype = basicArchetypeList.get(event.value);
     this.player.playerArchetype = selectedArchetype;
     this.updateCharacteristicsValues(selectedArchetype);
+    this.UpdateStats();
     this.playerService.updatePlayer(this.player);
+    
   }
 
   updateCharacteristicsValues(selectedArchetype: Archetype): void {
@@ -48,10 +55,39 @@ export class CharacterArchetypeComponent implements OnInit {
     });
   }
 
-  updateStatsValues(selectedArchetype: Archetype): void {
-    selectedArchetype.startingStats.forEach((value: number, stat: StatEnum) => {
-      this.player.playerStats.get(stat).value1 = value;
-    });
+
+
+
+
+
+
+  //Updating Stats after selecting 
+  UpdateStats(): void{
+    this.CalculateSoak();
+    this.CalculateWoundThreshold();
+    this.CalculateStrainThreshold();
+    this.CalculateRangedDefense();
+    this.CalculateMeleeDefense();
+    this.playerService.updatePlayer(this.player);
   }
 
+  CalculateSoak(): void{
+    this.player.playerStats.get(StatEnum.Soak).value1 = this.player.playerCharacteristics.get(CharacteristicEnum.Brawn).value; //Add possible modifiers such as armor and talents
+  }
+
+  CalculateWoundThreshold(): void{
+    this.player.playerStats.get(StatEnum.Wounds).value1 = (this.player.playerArchetype.startingStats.get(StatEnum.Wounds) + this.player.playerCharacteristics.get(CharacteristicEnum.Brawn).value); //Add possible modifiers such as talents
+  }
+
+  CalculateStrainThreshold(): void{
+    this.player.playerStats.get(StatEnum.Strain).value1 = (this.player.playerArchetype.startingStats.get(StatEnum.Strain) + this.player.playerCharacteristics.get(CharacteristicEnum.Willpower).value); //Add possible modifiers such as talents
+  }
+
+  CalculateRangedDefense(): void{
+    this.player.playerStats.get(StatEnum.Defense).value1 = 0; //Add possible modifiers such as talents and armor
+  }
+
+  CalculateMeleeDefense(): void{
+    this.player.playerStats.get(StatEnum.Defense).value2 = 0; //Add possible modifiers such as talents and armor
+  }
 }

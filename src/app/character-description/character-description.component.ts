@@ -25,17 +25,4 @@ export class CharacterDescriptionComponent implements OnInit {
   ngOnInit(): void{
     this.playerService.player$.subscribe(player => this.player = player);
   }
-
-/*
-  onDescriptionUpdate(event): void {
-    const selectedArchetype = basicArchetypeList.get(event.value);
-    this.player.playerArchetype = selectedArchetype;
-    this.updateDescriptions(selectedArchetype);
-    this.playerService.updatePlayer(this.player);
-  }
-
-  updateDescriptions(pName: string, cName: string): void;
-
-  
-  */
 }

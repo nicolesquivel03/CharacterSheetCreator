@@ -5,6 +5,8 @@ import { characteristicList, PlayerCharacteristic } from './player-characteristi
 import { PlayerStat, statsList } from './player-stats';
 import { CharacteristicEnum } from '../character-characteristics/characteristics';
 import { StatEnum } from '../character-stats/stats';
+import { PlayerSkill, skillList } from './player-skills';
+import { SkillsEnum } from '../character-skills/skills';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,7 @@ export class PlayerService {
     playerName: "",
     playerArchetype: null,
     playerCareer: null,
-    playerSkills: [],
+    playerSkills: skillList,
     playerCharacteristics: characteristicList,
     playerStats: statsList,
     setting: null
@@ -35,6 +37,11 @@ export class PlayerService {
 
     console.log(`---- Character Stats ----`);
     this.player.value.playerStats.forEach((value: PlayerStat, key: StatEnum) => {
+      console.log(key, value);
+    });
+
+    console.log(`---- Character Skills ----`);
+    this.player.value.playerSkills.forEach((value: PlayerSkill, key: SkillsEnum) => {
       console.log(key, value);
     });
   }

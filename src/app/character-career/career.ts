@@ -1,10 +1,10 @@
 import { Skill } from "../character-skills/skill";
-import { Careers, CareerGroupEnum } from './careers';
+import { CareerGroupEnum, CareerEnum } from './careers';
 import { SettingEnum } from "../game-configuration/settings";
 
 export interface Career {
-    display: string;
     id: number;
+    display: string;
     skills: Skill[];
 }
 
@@ -12,7 +12,7 @@ export interface CareerGroup {
     id: CareerGroupEnum;
     disabled?: boolean;
     name: string;
-    careers: Map<Careers, Career>;
+    careerList: Map<CareerEnum, Career>;
     setting: SettingEnum[];
 }
 

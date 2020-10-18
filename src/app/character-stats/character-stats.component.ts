@@ -4,6 +4,7 @@ import { Stat } from "./stat";
 import { StatEnum, Stats } from "./stats";
 import { PlayerService } from "../player/player.service";
 import { PlayerStat } from '../player/player-stats';
+import { CharacteristicEnum } from '../character-characteristics/characteristics';
 //statsList
 
 
@@ -27,5 +28,4 @@ export class CharacterStatsComponent implements OnInit {
   ngOnInit(): void {
     this.playerService.player$.subscribe(player => this.player = player);
   }
-
 }

@@ -6,11 +6,12 @@ import { Career } from "../character-career/career";
 import { Setting } from "../game-configuration/settings";
 import { CharacteristicEnum } from "../character-characteristics/characteristics";
 import { StatEnum } from "../character-stats/stats"
+import { SkillsEnum } from '../character-skills/skills';
 
 export interface Player {
     playerStats: Map <StatEnum, PlayerStat>;
     playerCharacteristics: Map<CharacteristicEnum, PlayerCharacteristic>;
-    playerSkills: PlayerSkill[];
+    playerSkills: Map<SkillsEnum, PlayerSkill>;
     playerArchetype: Archetype;
     playerCareer: Career;
     playerName: string;

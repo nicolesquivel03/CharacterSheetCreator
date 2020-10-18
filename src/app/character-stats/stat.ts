@@ -7,3 +7,7 @@ export interface Stat {
     value2_name?: string;
     hasMultipleValues: boolean;
 }
+
+export interface StatBlock {
+    playerStatBlock: Map <StatEnum, Stat>;
+}
