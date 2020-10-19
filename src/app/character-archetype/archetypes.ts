@@ -1,5 +1,5 @@
 import { Archetype } from './archetype';
-import { SkillsEnum, Skills } from '../character-skills/skills';
+import { SkillsEnum } from '../character-skills/skills';
 import { CharacteristicEnum } from '../character-characteristics/characteristics';
 import { StatEnum } from '../character-stats/stats';
 
@@ -46,7 +46,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 12], 
                 [StatEnum.Strain, 8]
             ]),
-            startingSkill: [ Skills[SkillsEnum.Athletics] ]
+            startingSkill: [SkillsEnum.Athletics]
         }
     ],
     [ 
@@ -65,7 +65,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 8], 
                 [StatEnum.Strain, 12]
             ]),
-            startingSkill: [ Skills[SkillsEnum.Knowledge] ] // TODO: ADD ALL KNOWLEDGE SKILLS
+            startingSkill: [SkillsEnum.Knowledge] // TODO: ADD ALL KNOWLEDGE SKILLS
         }
     ],
     [
@@ -84,7 +84,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 10], 
                 [StatEnum.Strain, 10]
             ]),
-            startingSkill: [ Skills[SkillsEnum.Cool] ]
+            startingSkill: [SkillsEnum.Cool]
         }
     ]
   ]);

@@ -1,5 +1,5 @@
 import { Career, CareerGroup } from '../character-career/career';
-import { Skills, SkillsEnum } from "../character-skills/skills";
+import { SkillList, SkillsEnum } from "../character-skills/skills";
 import { SettingEnum } from "../game-configuration/settings";
 
 export enum CareerEnum {
@@ -33,15 +33,15 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Entertainer,
             display: 'Entertainer', 
             skills: [
-                Skills[SkillsEnum.Charm], 
-                Skills[SkillsEnum.Coordination],
-                Skills[SkillsEnum.Deception],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Leadership],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Light],
-                Skills[SkillsEnum.Skulduggery],
-                Skills[SkillsEnum.Stealth]
+                SkillsEnum.Charm, 
+                SkillsEnum.Coordination,
+                SkillsEnum.Deception,
+                SkillsEnum.Discipline,
+                SkillsEnum.Leadership,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Light,
+                SkillsEnum.Skulduggery,
+                SkillsEnum.Stealth
             ]
         }
     ],
@@ -50,15 +50,15 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Explorer,
             display: 'Explorer',
             skills: [
-                Skills[SkillsEnum.Athletics], 
-                Skills[SkillsEnum.Brawl],
-                Skills[SkillsEnum.Coordination],
-                Skills[SkillsEnum.Deception],
-                Skills[SkillsEnum.Perception],
-                Skills[SkillsEnum.Ranged],
-                Skills[SkillsEnum.Ranged_Heavy],
-                Skills[SkillsEnum.Stealth],
-                Skills[SkillsEnum.Survival]
+                SkillsEnum.Athletics, 
+                SkillsEnum.Brawl,
+                SkillsEnum.Coordination,
+                SkillsEnum.Deception,
+                SkillsEnum.Perception,
+                SkillsEnum.Ranged,
+                SkillsEnum.Ranged_Heavy,
+                SkillsEnum.Stealth,
+                SkillsEnum.Survival
             ]
         }
     ],
@@ -67,15 +67,15 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Healer,
             display: 'Healer',
             skills: [
-                Skills[SkillsEnum.Cool], 
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Knowledge],
-                Skills[SkillsEnum.Medicine],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Light],
-                Skills[SkillsEnum.Resilience],
-                Skills[SkillsEnum.Survival],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Cool, 
+                SkillsEnum.Discipline,
+                SkillsEnum.Knowledge,
+                SkillsEnum.Medicine,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Light,
+                SkillsEnum.Resilience,
+                SkillsEnum.Survival,
+                SkillsEnum.Vigilance
             ]
         }
     ],
@@ -84,15 +84,15 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Leader,
             display: 'Leader',
             skills: [
-                Skills[SkillsEnum.Charm], 
-                Skills[SkillsEnum.Coercion],
-                Skills[SkillsEnum.Cool],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Leadership],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Light],
-                Skills[SkillsEnum.Negotiation],
-                Skills[SkillsEnum.Perception]
+                SkillsEnum.Charm, 
+                SkillsEnum.Coercion,
+                SkillsEnum.Cool,
+                SkillsEnum.Discipline,
+                SkillsEnum.Leadership,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Light,
+                SkillsEnum.Negotiation,
+                SkillsEnum.Perception
             ]
         }
     ],
@@ -101,15 +101,15 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Scoundrel,
             display: 'Scoundrel',
             skills: [
-                Skills[SkillsEnum.Charm], 
-                Skills[SkillsEnum.Cool],
-                Skills[SkillsEnum.Coordination],
-                Skills[SkillsEnum.Deception],
-                Skills[SkillsEnum.Ranged],
-                Skills[SkillsEnum.Ranged_Light],
-                Skills[SkillsEnum.Skulduggery],
-                Skills[SkillsEnum.Stealth],
-                Skills[SkillsEnum.Streetwise]
+                SkillsEnum.Charm, 
+                SkillsEnum.Cool,
+                SkillsEnum.Coordination,
+                SkillsEnum.Deception,
+                SkillsEnum.Ranged,
+                SkillsEnum.Ranged_Light,
+                SkillsEnum.Skulduggery,
+                SkillsEnum.Stealth,
+                SkillsEnum.Streetwise
             ]
         }
     ],
@@ -118,15 +118,15 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Socialite,
             display: 'Socialite',
             skills: [
-                Skills[SkillsEnum.Charm],
-                Skills[SkillsEnum.Cool],
-                Skills[SkillsEnum.Deception],
-                Skills[SkillsEnum.Knowledge],
-                Skills[SkillsEnum.Negotiation],
-                Skills[SkillsEnum.Perception],
-                Skills[SkillsEnum.Streetwise],
-                Skills[SkillsEnum.Survival],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Charm,
+                SkillsEnum.Cool,
+                SkillsEnum.Deception,
+                SkillsEnum.Knowledge,
+                SkillsEnum.Negotiation,
+                SkillsEnum.Perception,
+                SkillsEnum.Streetwise,
+                SkillsEnum.Survival,
+                SkillsEnum.Vigilance
             ]
         }
     ],
@@ -135,17 +135,17 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Soldier,
             display: 'Soldier',
             skills: [
-                Skills[SkillsEnum.Athletics], 
-                Skills[SkillsEnum.Brawl],
-                Skills[SkillsEnum.Coercion],
-                Skills[SkillsEnum.Gunnery],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Heavy],
-                Skills[SkillsEnum.Perception],
-                Skills[SkillsEnum.Ranged],
-                Skills[SkillsEnum.Ranged_Heavy],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Athletics, 
+                SkillsEnum.Brawl,
+                SkillsEnum.Coercion,
+                SkillsEnum.Gunnery,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Heavy,
+                SkillsEnum.Perception,
+                SkillsEnum.Ranged,
+                SkillsEnum.Ranged_Heavy,
+                SkillsEnum.Vigilance
             ]
         }
     ],
@@ -154,14 +154,14 @@ export const basicCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Tradesperson,
             display: 'Tradesperson',
             skills: [
-                Skills[SkillsEnum.Athletics], 
-                Skills[SkillsEnum.Brawl],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Mechanics],
-                Skills[SkillsEnum.Negotiation],
-                Skills[SkillsEnum.Perception],
-                Skills[SkillsEnum.Resilience],
-                Skills[SkillsEnum.Streetwise]
+                SkillsEnum.Athletics, 
+                SkillsEnum.Brawl,
+                SkillsEnum.Discipline,
+                SkillsEnum.Mechanics,
+                SkillsEnum.Negotiation,
+                SkillsEnum.Perception,
+                SkillsEnum.Resilience,
+                SkillsEnum.Streetwise
             ]
         }
     ]
@@ -173,16 +173,16 @@ export const fantasyCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Knight, 
             display: 'Knight',
             skills: [
-                Skills[SkillsEnum.Athletics],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Gunnery],
-                Skills[SkillsEnum.Leadership],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Heavy],
-                Skills[SkillsEnum.Melee_Light],
-                Skills[SkillsEnum.Resilience],
-                Skills[SkillsEnum.Riding],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Athletics,
+                SkillsEnum.Discipline,
+                SkillsEnum.Gunnery,
+                SkillsEnum.Leadership,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Heavy,
+                SkillsEnum.Melee_Light,
+                SkillsEnum.Resilience,
+                SkillsEnum.Riding,
+                SkillsEnum.Vigilance
                 
             ]
         }
@@ -192,15 +192,15 @@ export const fantasyCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Priest, 
             display: 'Priest',
             skills: [
-                Skills[SkillsEnum.Charm],
-                Skills[SkillsEnum.Coercion],
-                Skills[SkillsEnum.Cool],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Divine],
-                Skills[SkillsEnum.Medicine],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Light],
-                Skills[SkillsEnum.Negotiation]
+                SkillsEnum.Charm,
+                SkillsEnum.Coercion,
+                SkillsEnum.Cool,
+                SkillsEnum.Discipline,
+                SkillsEnum.Divine,
+                SkillsEnum.Medicine,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Light,
+                SkillsEnum.Negotiation
             ]
         }
     ],
@@ -209,15 +209,15 @@ export const fantasyCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Druid, 
             display: 'Druid',
             skills: [
-                Skills[SkillsEnum.Athletics],
-                Skills[SkillsEnum.Brawl],
-                Skills[SkillsEnum.Coordination],
-                Skills[SkillsEnum.Melee],
-                Skills[SkillsEnum.Melee_Heavy],
-                Skills[SkillsEnum.Primal],
-                Skills[SkillsEnum.Resilience],
-                Skills[SkillsEnum.Survival],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Athletics,
+                SkillsEnum.Brawl,
+                SkillsEnum.Coordination,
+                SkillsEnum.Melee,
+                SkillsEnum.Melee_Heavy,
+                SkillsEnum.Primal,
+                SkillsEnum.Resilience,
+                SkillsEnum.Survival,
+                SkillsEnum.Vigilance
             ]
         }
     ],
@@ -226,15 +226,15 @@ export const fantasyCareerList: Map<CareerEnum, Career> = new Map([
             id: CareerEnum.Wizard, 
             display: 'Wizard',
             skills: [
-                Skills[SkillsEnum.Arcana],
-                Skills[SkillsEnum.Alchemy],
-                Skills[SkillsEnum.Coercion],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Knowledge],
-                Skills[SkillsEnum.Leadership],
-                Skills[SkillsEnum.Skulduggery],
-                Skills[SkillsEnum.Stealth],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Arcana,
+                SkillsEnum.Alchemy,
+                SkillsEnum.Coercion,
+                SkillsEnum.Discipline,
+                SkillsEnum.Knowledge,
+                SkillsEnum.Leadership,
+                SkillsEnum.Skulduggery,
+                SkillsEnum.Stealth,
+                SkillsEnum.Vigilance
             ]
         }
     ]
@@ -246,14 +246,14 @@ export const scifiCareerList: Map<CareerEnum, Career> =  new Map([
             id: CareerEnum.Hacker, 
             display: 'Hacker',
             skills: [
-                Skills[SkillsEnum.Computers],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Knowledge],                
-                Skills[SkillsEnum.Mechanics],
-                Skills[SkillsEnum.Perception],
-                Skills[SkillsEnum.Piloting],
-                Skills[SkillsEnum.Streetwise],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Computers,
+                SkillsEnum.Discipline,
+                SkillsEnum.Knowledge,                
+                SkillsEnum.Mechanics,
+                SkillsEnum.Perception,
+                SkillsEnum.Piloting,
+                SkillsEnum.Streetwise,
+                SkillsEnum.Vigilance
             ]
         }
     ],
@@ -262,15 +262,15 @@ export const scifiCareerList: Map<CareerEnum, Career> =  new Map([
             id: CareerEnum.FighterPilot, 
             display: 'Fighter Pilot',
             skills: [
-                Skills[SkillsEnum.Cool],
-                Skills[SkillsEnum.Driving],
-                Skills[SkillsEnum.Gunnery],                
-                Skills[SkillsEnum.Mechanics],
-                Skills[SkillsEnum.Perception],
-                Skills[SkillsEnum.Piloting],
-                Skills[SkillsEnum.Ranged],
-                Skills[SkillsEnum.Ranged_Light],
-                Skills[SkillsEnum.Vigilance]
+                SkillsEnum.Cool,
+                SkillsEnum.Driving,
+                SkillsEnum.Gunnery,                
+                SkillsEnum.Mechanics,
+                SkillsEnum.Perception,
+                SkillsEnum.Piloting,
+                SkillsEnum.Ranged,
+                SkillsEnum.Ranged_Light,
+                SkillsEnum.Vigilance
             ]
         }
     ],[
@@ -278,15 +278,15 @@ export const scifiCareerList: Map<CareerEnum, Career> =  new Map([
             id: CareerEnum.MadScientist, 
             display: 'Mad Scientist', 
             skills: [
-                Skills[SkillsEnum.Alchemy],
-                Skills[SkillsEnum.Arcana],
-                Skills[SkillsEnum.Coercion],
-                Skills[SkillsEnum.Knowledge],                
-                Skills[SkillsEnum.Mechanics],
-                Skills[SkillsEnum.Medicine],
-                Skills[SkillsEnum.Operating],
-                Skills[SkillsEnum.Skulduggery],
-                Skills[SkillsEnum.Ranged]
+                SkillsEnum.Alchemy,
+                SkillsEnum.Arcana,
+                SkillsEnum.Coercion,
+                SkillsEnum.Knowledge,                
+                SkillsEnum.Mechanics,
+                SkillsEnum.Medicine,
+                SkillsEnum.Operating,
+                SkillsEnum.Skulduggery,
+                SkillsEnum.Ranged
             ]
         }
     ],[
@@ -294,15 +294,15 @@ export const scifiCareerList: Map<CareerEnum, Career> =  new Map([
             id: CareerEnum.StarshipCaptain, 
             display: 'Starship Captain', 
             skills: [
-                Skills[SkillsEnum.Astrocatography],
-                Skills[SkillsEnum.Computers],
-                Skills[SkillsEnum.Discipline],
-                Skills[SkillsEnum.Gunnery],
-                Skills[SkillsEnum.Knowledge],                
-                Skills[SkillsEnum.Leadership],
-                Skills[SkillsEnum.Mechanics],
-                Skills[SkillsEnum.Operating],
-                Skills[SkillsEnum.Perception]
+                SkillsEnum.Astrocatography,
+                SkillsEnum.Computers,
+                SkillsEnum.Discipline,
+                SkillsEnum.Gunnery,
+                SkillsEnum.Knowledge,                
+                SkillsEnum.Leadership,
+                SkillsEnum.Mechanics,
+                SkillsEnum.Operating,
+                SkillsEnum.Perception
             ]
         }
     ]

@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "CharacterSheetCreator"
+  "defaultProject": "CharacterSheetCreator",
+  "cli": {
+    "analytics": "11e59cdb-f736-4b3e-b2c7-d6b6e761c6b8"
+  }
 }

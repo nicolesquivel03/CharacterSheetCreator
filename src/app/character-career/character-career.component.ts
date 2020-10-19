@@ -9,6 +9,7 @@ import { SettingEnum } from '../game-configuration/settings';
 import { PlayerService } from '../player/player.service';
 import { identifierModuleUrl } from '@angular/compiler';
 import { Skill } from '../character-skills/skill';
+import { SkillsEnum } from '../character-skills/skills';
 
 @Component({
   selector: 'app-character-career',
@@ -21,8 +22,8 @@ export class CharacterCareerComponent implements OnInit {
   descriptionControl = new FormControl();
   
   readonly careerLabel: string = 'Select Career';
-  careerGroups: Map<CareerGroupEnum, CareerGroup>;
-  selectedCareerGroup: Map<CareerEnum, Career>;
+  careerGroups: CareerGroup[] = [];
+  myCareer: Career;
   
   constructor(private playerService: PlayerService) { }
   
@@ -33,8 +34,30 @@ export class CharacterCareerComponent implements OnInit {
   }
 
   setCareers(): void {
-    this.careerGroups = careerGroupList;
-    this.selectedCareerGroup = basicCareerList;
+    this.careerGroups = [
+      {
+        id: CareerGroupEnum.Basic,
+        name: "Basic Careers",
+        careerList: basicCareerList,
+        setting: [ SettingEnum.All ],
+        disabled: false
+      },
+      {
+        id: CareerGroupEnum.Fantasy,
+        name: "Fantasy Careers",
+        careerList: fantasyCareerList,
+        setting: [ SettingEnum.Fantasy],
+        disabled: true
+      },
+      {
+        id: CareerGroupEnum.SciFi,
+        name: "High-Tech Careers", 
+        careerList: scifiCareerList,
+        setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.SpaceOpera],
+        disabled: true
+      }
+    ];
+    this.myCareer = null;
   }
 
   onCareerOpened(event): void {
@@ -50,7 +73,7 @@ export class CharacterCareerComponent implements OnInit {
 
   updateCareerGroups(): void {
     this.careerGroups.forEach((group) => {
-      if(this.player.setting.id) {
+      if(this.player.setting.id != null) {
 
         if(group.setting.indexOf(SettingEnum.All) !== -1 || group.setting.indexOf(this.player.setting.id) !== -1) {
           group.disabled = false;
@@ -60,24 +83,35 @@ export class CharacterCareerComponent implements OnInit {
       }
     });
   }
-/*
+
   onCareerSelection(event): void {
     console.log(`Updating Career`);
-    const selectectCareer = this.get(event.value);
-      this.player.playerCareer = selectectCareer;
-      selectectCareer.skills.forEach(mySkill => {
-        this.makeCareerSkills(mySkill)
-      });
-      this.playerService.updatePlayer(this.player);
-    }
+    const selectectCareer = this.findCareer(event.value);
+    console.log(`Career is ${selectectCareer}`);
+    this.player.playerCareer = selectectCareer;
+    selectectCareer.skills.forEach(mySkill => {
+      this.player.playerSkills.get(mySkill).isCareerSkill = true;
+    });
+    this.playerService.updatePlayer(this.player);
     console.log(`Updating Career using ${this.player.playerCareer.display}`);
   }
 
-  selectedCareerChoice(careerValue)
-
-  makeCareerSkills(chosenSkill: Skill): void{
-    this.player.playerSkills[chosenSkill.id].isCareerSkill = true;
+  findCareer(chosenCareer: CareerEnum): Career{
+    careerGroupList.forEach(loopCareerGroup => {
+      if (loopCareerGroup.id == CareerGroupEnum.Basic)
+      loopCareerGroup.careerList.forEach(loopCareer => {
+        if (loopCareer.id == chosenCareer)
+          {
+            this.myCareer = loopCareer;
+          }
+      });
+    });
+    console.log(`Career is ${this.myCareer}`);
+    return this.myCareer;
   }
-*/
+
+  /*makeCareerSkills(chosenSkill): void{
+    this.player.playerSkills[chosenSkill].isCareerSkill = true;
+  }*/
 
 }

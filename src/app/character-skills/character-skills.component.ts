@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from '../player/player';
 import { Skill } from './skill';
-import { Skills, SkillsEnum } from './skills';
+import { SkillList, SkillsEnum } from './skills';
 import { PlayerService } from '../player/player.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { PlayerService } from '../player/player.service';
 export class CharacterSkillsComponent implements OnInit {
   @Input() player: Player;
 
-  defaultSkills: Map<SkillsEnum, Skill>= Skills;
+  defaultSkills: Map<SkillsEnum, Skill> = SkillList;
 
   constructor(private playerService: PlayerService) { }
 

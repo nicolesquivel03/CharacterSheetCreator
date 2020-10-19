@@ -42,7 +42,7 @@ export enum SkillsEnum {
     Vigilance
 }
 
-export const Skills: Map<SkillsEnum, Skill> = new Map([
+export const SkillList: Map<SkillsEnum, Skill> = new Map([
     [
         SkillsEnum.Alchemy, { 
             id: SkillsEnum.Alchemy,
