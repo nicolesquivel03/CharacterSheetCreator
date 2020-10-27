@@ -1,10 +1,11 @@
-import { ArchetypeEnum } from './archetypes';
+import { ArchetypeEnum, ArchetypeGroupEnum } from './archetypes';
 import { CharacteristicEnum } from '../character-characteristics/characteristics';
 import { StatEnum } from '../character-stats/stats';
 import { SkillsEnum } from '../character-skills/skills';
+import { SettingEnum } from '../game-configuration/settings';
 
 export interface Archetype {
-    id: number;
+    id: ArchetypeEnum;
     display: string;
     startingCharacteristics: Map<CharacteristicEnum, number>;
     startingStats: Map<StatEnum, number>;
@@ -12,7 +13,9 @@ export interface Archetype {
 }
 
 export interface ArchetypeGroup {
-    disabled?: boolean;
+    id: ArchetypeGroupEnum;
     name: string;
-    archetypes: Map<ArchetypeEnum, Archetype>;
+    allowedSetting: SettingEnum;
+    archetypeList: Map<ArchetypeEnum, Archetype>;
+    disabled?: boolean;
 }

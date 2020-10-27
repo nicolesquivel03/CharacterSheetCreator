@@ -6,5 +6,5 @@ export interface Skill {
     id: SkillsEnum;
     display: string;
     setting: SettingEnum[];
-    characteristic: CharacteristicEnum;
+    associatedCharacteristic: CharacteristicEnum;
 }

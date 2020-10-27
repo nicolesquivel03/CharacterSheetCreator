@@ -5,7 +5,7 @@ import { characteristicList, PlayerCharacteristic } from './player-characteristi
 import { PlayerStat, statsList } from './player-stats';
 import { CharacteristicEnum } from '../character-characteristics/characteristics';
 import { StatEnum } from '../character-stats/stats';
-import { PlayerSkill, skillList } from './player-skills';
+import { PlayerSkill, playerSkillList } from './player-skills';
 import { SkillsEnum } from '../character-skills/skills';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class PlayerService {
     playerName: "",
     playerArchetype: null,
     playerCareer: null,
-    playerSkills: skillList,
+    playerSkills: playerSkillList,
     playerCharacteristics: characteristicList,
     playerStats: statsList,
     setting: null

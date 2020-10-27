@@ -1,13 +1,18 @@
-import { Archetype } from './archetype';
+import { Archetype, ArchetypeGroup } from './archetype';
 import { SkillsEnum } from '../character-skills/skills';
 import { CharacteristicEnum } from '../character-characteristics/characteristics';
 import { StatEnum } from '../character-stats/stats';
+import { SettingEnum } from '../game-configuration/settings';
 
 export enum ArchetypeEnum {
     AverageHuman,
     Laborer,
     Intellectual,
     Aristocrat
+}
+
+export enum ArchetypeGroupEnum{
+    Basic
 }
 
 export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
@@ -46,7 +51,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 12], 
                 [StatEnum.Strain, 8]
             ]),
-            startingSkill: [SkillsEnum.Athletics]
+            startingSkill: SkillsEnum.Athletics
         }
     ],
     [ 
@@ -65,7 +70,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 8], 
                 [StatEnum.Strain, 12]
             ]),
-            startingSkill: [SkillsEnum.Knowledge] // TODO: ADD ALL KNOWLEDGE SKILLS
+            startingSkill: SkillsEnum.Knowledge // TODO: ADD ALL KNOWLEDGE SKILLS
         }
     ],
     [
@@ -84,7 +89,19 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 10], 
                 [StatEnum.Strain, 10]
             ]),
-            startingSkill: [SkillsEnum.Cool]
+            startingSkill: SkillsEnum.Cool
         }
     ]
   ]);
+
+  export const ArchetypeGroupList: Map<ArchetypeGroupEnum, ArchetypeGroup> = new Map([
+    [
+        ArchetypeGroupEnum.Basic, {
+            id: ArchetypeGroupEnum.Basic,
+            name: 'Default Archetypes',
+            allowedSetting: SettingEnum.All,
+            archetypeList: basicArchetypeList,
+            disabled: false
+        }
+    ]
+  ])

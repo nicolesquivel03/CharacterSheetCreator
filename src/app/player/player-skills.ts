@@ -1,4 +1,4 @@
-import { PlayerCharacteristic, characteristicList } from "./player-characteristics";
+import {  } from "./player-characteristics";
 import { SkillsEnum } from '../character-skills/skills';
 import { CharacteristicEnum } from '../character-characteristics/characteristics';
 
@@ -9,10 +9,11 @@ export interface PlayerSkill {
     isCareerSkill: boolean;
     greenDiceCount: number;
     yellowDiceCount: number;
-    characteristic: PlayerCharacteristic;
+    associatedCharacteristic: CharacteristicEnum;
+    idDisabled: boolean;
 }
 
-export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
+export const playerSkillList: Map<SkillsEnum, PlayerSkill> = new Map([
     [
         SkillsEnum.Alchemy, {  
             id: SkillsEnum.Alchemy,
@@ -21,7 +22,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: true
         }
     ],
     [
@@ -32,7 +34,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: true
         }
     ],
     [
@@ -43,7 +46,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: true
         }
     ],
     [
@@ -54,7 +58,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Brawn]
+            associatedCharacteristic: CharacteristicEnum.Brawn,
+            idDisabled: false
         }
     ],
     [
@@ -65,7 +70,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Brawn]
+            associatedCharacteristic: CharacteristicEnum.Brawn,
+            idDisabled: false
         }
     ],
     [
@@ -76,7 +82,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Presence]
+            associatedCharacteristic: CharacteristicEnum.Presence,
+            idDisabled: false
         }
     ],
     [
@@ -87,7 +94,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Willpower]
+            associatedCharacteristic: CharacteristicEnum.Willpower,
+            idDisabled: false
         }
     ],
     [
@@ -98,7 +106,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: true
         }
     ],
     [
@@ -109,7 +118,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Presence]
+            associatedCharacteristic: CharacteristicEnum.Presence,
+            idDisabled: false
         }
     ],
     [
@@ -120,7 +130,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: false
         }
     ],
     [
@@ -131,7 +142,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Cunning]
+            associatedCharacteristic: CharacteristicEnum.Cunning,
+            idDisabled: false
         }
     ],
     [
@@ -142,7 +154,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Willpower]
+            associatedCharacteristic: CharacteristicEnum.Willpower,
+            idDisabled: false
         }
     ],
     [
@@ -153,7 +166,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Willpower]
+            associatedCharacteristic: CharacteristicEnum.Willpower,
+            idDisabled: true
         }
     ],
     [
@@ -164,7 +178,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: true
         }
     ],
     [
@@ -175,7 +190,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: false
         }
     ],
     [
@@ -186,7 +202,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: false
         }
     ],
 
@@ -202,7 +219,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Presence]
+            associatedCharacteristic: CharacteristicEnum.Presence,
+            idDisabled: false
         }
     ],
     [
@@ -213,7 +231,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: true
         }
     ],
     [
@@ -224,7 +243,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: false
         }
     ],
     [
@@ -235,7 +255,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Brawn]
+            associatedCharacteristic: CharacteristicEnum.Brawn,
+            idDisabled: false
         }
     ],
     [
@@ -246,7 +267,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Brawn]
+            associatedCharacteristic: CharacteristicEnum.Brawn,
+            idDisabled: true
         }
     ],
     [
@@ -257,7 +279,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Brawn]
+            associatedCharacteristic: CharacteristicEnum.Brawn,
+            idDisabled: true
         }
     ],
     [
@@ -268,7 +291,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Presence]
+            associatedCharacteristic: CharacteristicEnum.Presence,
+            idDisabled: false
         }
     ],
     [
@@ -279,7 +303,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Intellect]
+            associatedCharacteristic: CharacteristicEnum.Intellect,
+            idDisabled: false
         }
     ],
     [
@@ -290,7 +315,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Cunning]
+            associatedCharacteristic: CharacteristicEnum.Cunning,
+            idDisabled: false
         }
     ],
     [
@@ -301,7 +327,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: true
         }
     ],
     [
@@ -312,7 +339,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Cunning]
+            associatedCharacteristic: CharacteristicEnum.Cunning,
+            idDisabled: true
         }
     ],
     [
@@ -323,7 +351,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: false
         }
     ],
     [
@@ -334,7 +363,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: true
         }
     ],
     [
@@ -345,7 +375,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: true
         }
     ],
     [
@@ -356,7 +387,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Brawn]
+            associatedCharacteristic: CharacteristicEnum.Brawn,
+            idDisabled: false
         }
     ],
     [
@@ -367,7 +399,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: true
         }
     ],
     [
@@ -378,7 +411,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Cunning]
+            associatedCharacteristic: CharacteristicEnum.Cunning,
+            idDisabled: false
         }
     ],
     [
@@ -389,7 +423,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Agility]
+            associatedCharacteristic: CharacteristicEnum.Agility,
+            idDisabled: false
         }
     ],
     [
@@ -400,7 +435,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Cunning]
+            associatedCharacteristic: CharacteristicEnum.Cunning,
+            idDisabled: false
         }
     ],
     [
@@ -411,7 +447,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Cunning]
+            associatedCharacteristic: CharacteristicEnum.Cunning,
+            idDisabled: false
         }
     ],
     [
@@ -422,7 +459,8 @@ export const skillList: Map<SkillsEnum, PlayerSkill> = new Map([
             isCareerSkill: false,
             greenDiceCount: 0,
             yellowDiceCount: 0,
-            characteristic: characteristicList[CharacteristicEnum.Willpower]
+            associatedCharacteristic: CharacteristicEnum.Willpower,
+            idDisabled: false
         }
     ]
 ])

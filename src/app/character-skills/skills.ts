@@ -48,7 +48,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Alchemy,
             display: "Alchemy",
             setting: [ SettingEnum.Fantasy, SettingEnum.Steampunk, SettingEnum.WeirdWar],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -56,7 +56,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Arcana,
             display: "Arcana",
             setting: [ SettingEnum.Magic ],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -64,7 +64,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Astrocatography,
             display: "Astrocatography",
             setting: [ SettingEnum.SpaceOpera, SettingEnum.ScienceFiction ],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -72,7 +72,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Athletics,
             display: "Athletics",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Brawn
+            associatedCharacteristic: CharacteristicEnum.Brawn
         }
     ],
     [
@@ -80,7 +80,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Brawl,
             display: "Brawl",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Brawn
+            associatedCharacteristic: CharacteristicEnum.Brawn
         }
     ],
     [
@@ -88,7 +88,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Charm,
             display: "Charm",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Presence
+            associatedCharacteristic: CharacteristicEnum.Presence
         }
     ],
     [
@@ -96,7 +96,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Coercion,
             display: "Coercion",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Willpower
+            associatedCharacteristic: CharacteristicEnum.Willpower
         }
     ],
     [
@@ -104,7 +104,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Computers,
             display: "Computers",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.SpaceOpera],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -112,7 +112,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Cool,
             display: "Cool",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Presence
+            associatedCharacteristic: CharacteristicEnum.Presence
         }
     ],
     [
@@ -120,7 +120,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Coordination,
             display: "Coordination",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -128,7 +128,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Deception,
             display: "Deception",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Cunning
+            associatedCharacteristic: CharacteristicEnum.Cunning
         }
     ],
     [
@@ -136,7 +136,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Discipline,
             display: "Discipline",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Willpower
+            associatedCharacteristic: CharacteristicEnum.Willpower
         }
     ],
     [
@@ -144,7 +144,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Divine,
             display: "Divine",
             setting: [ SettingEnum.Magic ],
-            characteristic: CharacteristicEnum.Willpower
+            associatedCharacteristic: CharacteristicEnum.Willpower
         }
     ],
     [
@@ -152,7 +152,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Driving,
             display: "Driving",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.Steampunk, SettingEnum.SpaceOpera, SettingEnum.WeirdWar ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -160,7 +160,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Gunnery,
             display: "Gunnery",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.Steampunk, SettingEnum.SpaceOpera, SettingEnum.WeirdWar ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -168,7 +168,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Knowledge,
             display: "Knowledge",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
 
@@ -181,7 +181,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Leadership,
             display: "Leadership",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Presence
+            associatedCharacteristic: CharacteristicEnum.Presence
         }
     ],
     [
@@ -189,7 +189,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Mechanics,
             display: "Mechanics",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -197,7 +197,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Medicine,
             display: "Medicine",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -205,7 +205,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Melee,
             display: "Melee",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.Steampunk, SettingEnum.SpaceOpera, SettingEnum.WeirdWar ],
-            characteristic: CharacteristicEnum.Brawn
+            associatedCharacteristic: CharacteristicEnum.Brawn
         }
     ],
     [
@@ -213,7 +213,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Melee_Heavy,
             display: "Melee (Heavy)",
             setting: [ SettingEnum.Fantasy ],
-            characteristic: CharacteristicEnum.Brawn
+            associatedCharacteristic: CharacteristicEnum.Brawn
         }
     ],
     [
@@ -221,7 +221,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Melee_Light,
             display: "Melee (Light)",
             setting: [ SettingEnum.Fantasy ],
-            characteristic: CharacteristicEnum.Brawn
+            associatedCharacteristic: CharacteristicEnum.Brawn
         }
     ],
     [
@@ -229,7 +229,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Negotiation,
             display: "Negotiation",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Presence
+            associatedCharacteristic: CharacteristicEnum.Presence
         }
     ],
     [
@@ -237,7 +237,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Operating,
             display: "Operating",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Intellect
+            associatedCharacteristic: CharacteristicEnum.Intellect
         }
     ],
     [
@@ -245,7 +245,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Perception,
             display: "Perception",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Cunning
+            associatedCharacteristic: CharacteristicEnum.Cunning
         }
     ],
     [
@@ -253,7 +253,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Piloting,
             display: "Piloting",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.Steampunk, SettingEnum.SpaceOpera, SettingEnum.WeirdWar ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -261,7 +261,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Primal,
             display: "Primal",
             setting: [ SettingEnum.Magic ],
-            characteristic: CharacteristicEnum.Cunning
+            associatedCharacteristic: CharacteristicEnum.Cunning
         }
     ],
     [
@@ -269,7 +269,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Ranged,
             display: "Ranged",
             setting: [ SettingEnum.Fantasy ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -277,7 +277,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Ranged_Heavy,
             display: "Ranged (Heavy)",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.Steampunk, SettingEnum.SpaceOpera, SettingEnum.WeirdWar ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -285,7 +285,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Ranged_Light,
             display: "Ranged (Light)",
             setting: [ SettingEnum.ModernDay, SettingEnum.ScienceFiction, SettingEnum.Steampunk, SettingEnum.SpaceOpera, SettingEnum.WeirdWar ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -293,7 +293,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Resilience,
             display: "Resilience",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Brawn
+            associatedCharacteristic: CharacteristicEnum.Brawn
         }
     ],
     [
@@ -301,7 +301,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Riding,
             display: "Riding",
             setting: [ SettingEnum.Fantasy, SettingEnum.Steampunk ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -309,7 +309,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Skulduggery,
             display: "Skulduggery",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Cunning
+            associatedCharacteristic: CharacteristicEnum.Cunning
         }
     ],
     [
@@ -317,7 +317,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Stealth,
             display: "Stealth",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Agility
+            associatedCharacteristic: CharacteristicEnum.Agility
         }
     ],
     [
@@ -325,7 +325,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Streetwise,
             display: "Streetwise",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Cunning
+            associatedCharacteristic: CharacteristicEnum.Cunning
         }
     ],
     [
@@ -333,7 +333,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Survival,
             display: "Survival",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Cunning
+            associatedCharacteristic: CharacteristicEnum.Cunning
         }
     ],
     [
@@ -341,7 +341,7 @@ export const SkillList: Map<SkillsEnum, Skill> = new Map([
             id: SkillsEnum.Vigilance,
             display: "Vigilance",
             setting: [ SettingEnum.All ],
-            characteristic: CharacteristicEnum.Willpower
+            associatedCharacteristic: CharacteristicEnum.Willpower
         }
     ]
 ])

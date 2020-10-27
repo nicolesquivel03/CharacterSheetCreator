@@ -1,9 +1,9 @@
 <mat-form-field appearance="standard">
     <mat-label>{{careerLabel}}</mat-label>
     <mat-select [formControl]="descriptionControl" (openedChange)="onCareerOpened($event)" (selectionChange)='onCareerSelection($event)'>
-        <mat-optgroup *ngFor="let group of careerGroups" [label]="group.name"
-                    [disabled] ="group.disabled">
-            <mat-option *ngFor="let career of group.careerList | keyvalue" [value]= "career.value.id">
+        <mat-optgroup *ngFor="let group of careerGroups | keyvalue" [label]="group.value.name"
+                    [disabled] ="group.value.disabled">
+            <mat-option *ngFor="let career of group.value.careerList | keyvalue" [value]= "career.value.id">
                 {{ career.value.display }}
             </mat-option>
         </mat-optgroup>

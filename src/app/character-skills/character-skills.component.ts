@@ -3,6 +3,8 @@ import { Player } from '../player/player';
 import { Skill } from './skill';
 import { SkillList, SkillsEnum } from './skills';
 import { PlayerService } from '../player/player.service';
+import { playerSkillList } from '../player/player-skills';
+import { SettingEnum } from '../game-configuration/settings'
 
 @Component({
   selector: 'app-character-skills',
@@ -12,12 +14,25 @@ import { PlayerService } from '../player/player.service';
 export class CharacterSkillsComponent implements OnInit {
   @Input() player: Player;
 
-  defaultSkills: Map<SkillsEnum, Skill> = SkillList;
+  readonly SkillTitleLabel: "Skills";
+  selectSkillList: Map<SkillsEnum, Skill> = SkillList;
 
   constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
     this.playerService.player$.subscribe(player => this.player = player);
+    this.setActiveSkills;
   }
 
+  setActiveSkills(): void {
+    SkillList.forEach((selectedSkill) => {
+      selectedSkill.setting.forEach((possibleSetting) => {
+        if (possibleSetting != this.player.setting.id && possibleSetting != SettingEnum.All)
+        {
+          this.player.playerSkills[selectedSkill.id].idDisabled = true;
+        }
+      });
+    });
+    this.playerService.updatePlayer(this.player);
+  }
 }

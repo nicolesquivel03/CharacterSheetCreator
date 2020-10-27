@@ -5,7 +5,9 @@
         <mat-card-title >{{characteristic.display}}</mat-card-title>
       </mat-card-header>
       <mat-card-content class="body">
-        {{player.playerCharacteristics.get(characteristic.id).value}}
+        <mat-grid-list cols="1" rowHeight="5:1">
+          <mat-grid-tile>{{player.playerCharacteristics.get(characteristic.id).value}}</mat-grid-tile>
+        </mat-grid-list>
       </mat-card-content>
     </mat-card>
   </div>
