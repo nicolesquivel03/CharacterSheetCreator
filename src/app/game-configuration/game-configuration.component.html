@@ -4,8 +4,8 @@
         <mat-form-field appearance="standard">
             <mat-label>{{settingsLabel}}</mat-label>
             <mat-select [(value)]="player.setting" (selectionChange)="onChangeUpdate($event)">
-                <mat-option *ngFor="let setting of settings | keyvalue" [value]="setting.value">
-                  {{ setting.value.display }}
+                <mat-option *ngFor="let setting of configurations.settings | keyvalue" [value]="setting.value">
+                  {{ setting.value }}
                 </mat-option>
             </mat-select>
         </mat-form-field>

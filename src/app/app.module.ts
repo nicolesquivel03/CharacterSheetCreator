@@ -1,3 +1,9 @@
+/** GOOGLE FIRESTORE IMPORTS **/
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 /** ANGULAR IMPORTS **/
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -43,14 +49,17 @@ import { GameConfigurationComponent } from './game-configuration/game-configurat
     MatAutocompleteModule,
     MatCheckboxModule,
     MatGridListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   exports: [
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
