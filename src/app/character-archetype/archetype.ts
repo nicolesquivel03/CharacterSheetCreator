@@ -9,7 +9,7 @@ export interface Archetype {
     display: string;
     startingCharacteristics: Map<CharacteristicEnum, number>;
     startingStats: Map<StatEnum, number>;
-    startingSkills?: SkillsEnum[];
+    startingSkills?: Array<SkillsEnum>;
 }
 
 export interface ArchetypeGroup {

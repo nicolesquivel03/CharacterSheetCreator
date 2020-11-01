@@ -4,6 +4,7 @@ import { SettingEnum } from "../game-configuration/settings";
 
 export enum SkillsEnum {
     Alchemy,
+    Any,
     Arcana,
     Astrocatography,
     Athletics,

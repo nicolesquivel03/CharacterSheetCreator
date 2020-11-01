@@ -32,7 +32,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 10], 
                 [StatEnum.Strain, 10]
             ]),
-            startingSkill: []
+            startingSkills: null
         }
     ],
     [ 
@@ -51,7 +51,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 12], 
                 [StatEnum.Strain, 8]
             ]),
-            startingSkill: SkillsEnum.Athletics
+            startingSkills: [ SkillsEnum.Athletics ]
         }
     ],
     [ 
@@ -70,7 +70,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 8], 
                 [StatEnum.Strain, 12]
             ]),
-            startingSkill: SkillsEnum.Knowledge // TODO: ADD ALL KNOWLEDGE SKILLS
+            startingSkills: [ SkillsEnum.Knowledge ] // TODO: ADD ALL KNOWLEDGE SKILLS
         }
     ],
     [
@@ -89,7 +89,7 @@ export const basicArchetypeList: Map<ArchetypeEnum, Archetype> = new Map([
                 [StatEnum.Wounds, 10], 
                 [StatEnum.Strain, 10]
             ]),
-            startingSkill: SkillsEnum.Cool
+            startingSkills: [ SkillsEnum.Cool ]
         }
     ]
   ]);

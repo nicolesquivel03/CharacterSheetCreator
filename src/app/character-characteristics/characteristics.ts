@@ -1,3 +1,4 @@
+import { characteristicList } from '../player/player-characteristics'
 import { Characteristic } from "./characteristic"
 
 export enum CharacteristicEnum {
@@ -39,6 +40,5 @@ export const Characteristics: Characteristic[] = [
         id: CharacteristicEnum.Presence,
         display: 'Presence',   
         value: 0
-    },
-
+    }
 ]

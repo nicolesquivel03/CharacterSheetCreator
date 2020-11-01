@@ -10,7 +10,11 @@ import { SettingEnum } from '../game-configuration/settings';
 import { PlayerService } from '../player/player.service';
 import { identifierModuleUrl } from '@angular/compiler';
 import { StatEnum } from '../character-stats/stats';
-import { SkillsEnum } from '../character-skills/skills';
+import { SkillList, SkillsEnum } from '../character-skills/skills';
+import { playerSkillList } from '../player/player-skills';
+import { statsList } from '../player/player-stats';
+import { characteristicList } from '../player/player-characteristics'
+import { basicCareerList } from '../character-career/careers';
 
 @Component({
   selector: 'app-character-archetype',
@@ -25,6 +29,7 @@ export class CharacterArchetypeComponent implements OnInit {
   readonly archetypeLabel: string = 'Select Archetype/Species';
   archetypeGroup: Map<ArchetypeGroupEnum, ArchetypeGroup>;
   myarchetype: Archetype;
+  counter: 0;
   
   constructor(private playerService: PlayerService) { }
 
@@ -38,25 +43,25 @@ export class CharacterArchetypeComponent implements OnInit {
   }
 
   onArchetypeSelection(event): void {
-    const selectedArchetype = basicArchetypeList.get(event.value);
+    this.voidExistingPlayer();
+    const selectedArchetype = this.findArchetype(event.value);
     this.player.playerArchetype = selectedArchetype;
     this.updateCharacteristicsValues(selectedArchetype);
-    if (selectedArchetype.startingSkills != null)
-    {
-      selectedArchetype.startingSkills.forEach(skillvalue => {
-        this.player.playerSkills.get(skillvalue).investedPointValue = 1;
+    this.updateStats();
+    if(selectedArchetype.startingSkills != null) {
+      selectedArchetype.startingSkills.forEach(Skill => {
+        this.player.playerSkills.get(Skill).investedPointValue = 1;
       });
     }
     this.player.playerSkills.forEach((skillValue) => {
       this.intialUpdateSkillValues(skillValue.id);
     });
-    this.updateStats();
     this.playerService.updatePlayer(this.player);
     console.log(`Archetype now: ${this.player.playerArchetype.display}`);
   }
 
   findArchetype(chosenCareer: ArchetypeEnum): Archetype{
-    this.archetypeGroup.forEach(loopArchetypeGroup => {
+    ArchetypeGroupList.forEach(loopArchetypeGroup => {
       loopArchetypeGroup.archetypeList.forEach(loopArchetype => {
         if (loopArchetype.id == chosenCareer)
           {
@@ -64,7 +69,7 @@ export class CharacterArchetypeComponent implements OnInit {
           }
       });
     });
-    console.log(`Career is ${this.myarchetype}`);
+    console.log(`Career is ${this.myarchetype.id}`);
     return this.myarchetype;
   }
 
@@ -88,8 +93,6 @@ export class CharacterArchetypeComponent implements OnInit {
       this.player.playerSkills.get(selectedSkill).greenDiceCount = this.player.playerSkills.get(selectedSkill).investedPointValue - this.player.playerCharacteristics.get(this.player.playerSkills.get(selectedSkill).associatedCharacteristic).value;
       this.player.playerSkills.get(selectedSkill).yellowDiceCount = this.player.playerSkills.get(selectedSkill).investedPointValue - this.player.playerSkills.get(selectedSkill).greenDiceCount;
     }
-    console.log(`Skill Updated: ${this.player.playerSkills.get(selectedSkill).greenDiceCount}`);
-    console.log(`Skill Updated: ${this.player.playerSkills.get(selectedSkill).yellowDiceCount}`);
   }
   
 
@@ -127,4 +130,16 @@ export class CharacterArchetypeComponent implements OnInit {
     this.player.playerStats.get(StatEnum.Defense).value2 = 0; //Add possible modifiers such as talents and armor
   }
   //-- Update all Stats (End) --//
+
+  voidExistingPlayer(): void{
+    this.player.playerArchetype = null;
+    this.player.playerCareer = null;
+    this.player.playerSkills = playerSkillList;
+    this.player.playerCharacteristics = characteristicList;
+    this.player.playerStats = statsList;
+    this.player.setting = null;
+    this.playerService.updatePlayer(this.player);
+  }
 }
+
+
