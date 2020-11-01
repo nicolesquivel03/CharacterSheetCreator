@@ -33,7 +33,9 @@ export class GameConfigurationComponent implements OnInit {
         var configurationObj = config.data();
         
         console.log(configurationObj);
-        this.configurations = new Configurations(configurationObj.magicEnabled, configurationObj.settings)
+        if(configurationObj) {
+          this.configurations = new Configurations(configurationObj.magicEnabled, configurationObj.settings);
+        }
       });
   }
 
