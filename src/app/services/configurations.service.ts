@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { AngularFirestore, CollectionReference } from '@angular/fire/firestore';
 import { Configurations } from 'src/app/entities/configurations.model';
+import { Settings } from '../game-configuration/settings';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class ConfigurationsService {
 
   private collectionId = 'GenesysCharacterSheet';
   private documentId = 'configurations';
+
+  configuration = this.firestore.collection(this.collectionId).doc(this.documentId).get();
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -23,8 +26,8 @@ export class ConfigurationsService {
         console.log(configurationsObject.toString());
         var configurations = new Configurations(configurationsObject.magicEnabled, configurationsObject.settings);
         // Use a configurations instance method
-        console.log(configurations.toString());
-        return this.configurations;
+        console.log(configurations);
+        return configurations;
       } else {
         console.log("No such document!")
       }}).catch(function(error) {

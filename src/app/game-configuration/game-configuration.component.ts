@@ -28,7 +28,13 @@ export class GameConfigurationComponent implements OnInit {
   ngOnInit(): void {
     this.playerService.player$.subscribe(player => this.player = player);
 
-    this.configurationService.getConfigurations().subscribe();
+    this.configurationService.configuration.subscribe(config =>
+      { 
+        var configurationObj = config.data();
+        
+        console.log(configurationObj);
+        this.configurations = new Configurations(configurationObj.magicEnabled, configurationObj.settings)
+      });
   }
 
   getSetting(): string {
